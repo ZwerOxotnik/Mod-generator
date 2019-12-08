@@ -1,5 +1,5 @@
 #!/bin/bash
-ECHO OFF
+@echo off
 
 set true=1==1
 set false=1==0
@@ -22,4 +22,4 @@ for %%i in (*.ogg) do (
 	echo %%~ni=%%~ni >> %CFG_FILE%
 )
 echo 	} >> %SOUNDS_LIST_FILE%
-echo }, >> %SOUNDS_LIST_FILE%
+echo } >> %SOUNDS_LIST_FILE%
