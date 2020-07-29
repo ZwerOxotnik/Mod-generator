@@ -7,3 +7,5 @@ https://mods.factorio.com/mod/play-use-any-sound
 or https://github.com/ZwerOxotnik/zk-lib
 
 Example: https://mods.factorio.com/mod/party-stuff
+
+More info on https://www.reddit.com/r/ZwerOxotnik/comments/dv7tpx/you_want_your_own_mod_stay_tuned/
