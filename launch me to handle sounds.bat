@@ -57,5 +57,6 @@ IF %state% EQU 1 echo # Put sounds_list.cfg in folder %mod_name%/locale/en (it'l
 echo[
 echo If you found a bug or you have a problem with script etc, please, let us know
 echo https://github.com/ZwerOxotnik/Mod-generator
+echo This script created by ZwerOxotnik. You can support me on Patreon 'ZwerOxotnik' and on Reddit /r/ZwerOxotnik
 echo[
 timeout /t -1
