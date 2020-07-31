@@ -1,5 +1,5 @@
-This script generates locales and lua files to handle your sound without programming!
-Tested on Windows 10 before.
+This script generates locales and lua files to handle your sound without programming!\
+Tested on Windows 10 before and this script doesn't support some symbols.
 
 Files "141258__eternitys__interface3.ogg" and "346835__yatoimtop__pageturn.ogg" for example, so you test in this folder, probably.
 
