@@ -34,7 +34,7 @@ echo -- Please, do not change this file if you're not sure, except sounds_list.n
 echo -- You need require this file to your control.lua and add https://mods.factorio.com/mod/zk-lib in your dependencies >> %SOUNDS_LIST_FILE%
 echo[ >> %SOUNDS_LIST_FILE%
 echo local sounds_list = { >> %SOUNDS_LIST_FILE%
-IF %STATE% EQU 1 echo 	name = %sound_group_name%, --change me, if you want to add these sounds to programmable speakers >> %SOUNDS_LIST_FILE%
+IF %STATE% EQU 1 echo 	name = "%sound_group_name%", --change me, if you want to add these sounds to programmable speakers >> %SOUNDS_LIST_FILE%
 IF %STATE% EQU 2 echo 	name = nil --change me, if you want to add these sounds to programmable speakers >> %SOUNDS_LIST_FILE%
 echo 	path = "__%mod_name%__/%folder_path%/", -- path to this folder >> %SOUNDS_LIST_FILE%
 echo 	sounds = { >> %SOUNDS_LIST_FILE%
