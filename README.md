@@ -1,7 +1,7 @@
 [![Discord](https://i.imgur.com/GYTxQdx.png)](https://discordapp.com/invite/YyJVUCa)[![Patreon](https://i.imgur.com/6n2ifle.png)](https://www.patreon.com/ZwerOxotnik) [![reddit](https://i.imgur.com/J1k7aGJ.png)](https://reddit.com/r/ZwerOxotnik)
 
 This script generates locales and lua files to handle your sound without programming!
-Tested on Windows 10 before and this script doesn't support some symbols.
+Tested on Windows 10 before and this script doesn't support some symbols and doesn't like spaces.
 
 Files "141258__eternitys__interface3.ogg" and "346835__yatoimtop__pageturn.ogg" for example, so you can test in this folder, probably.
 
