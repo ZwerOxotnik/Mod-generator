@@ -11,7 +11,7 @@ set /p mod_name=Insert your mod name:
 echo[
 echo you're in %CD%
 echo[
-set /p folder_path=Complete path to this folder: %mod_name%/
+set /p folder_path=Complete path to folder of sounds: %mod_name%/
 choice /C YN /M "Press Y to add sounds in this folder to programmable speakers (in Factorio), N to cancel the operation."
 set STATE=%ERRORLEVEL%
 IF %STATE% EQU 1 set /p sound_group_name=Insert group name of sounds: 
