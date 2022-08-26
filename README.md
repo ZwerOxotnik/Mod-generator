@@ -13,7 +13,7 @@ If everything works then you'll similar text at the end to this:
 
 >You're almost ready!
 >
-> \# You need to write 'require("__my-mod__/folder/sounds_list.lua")' in your my-mod/control.lua\
+> \# You need to write 'require("\_\_my-mod\_\_/folder/sounds_list.lua")' in your my-mod/control.lua\
 > \# Add string "zk-lib" in dependencies of my-mod/info.json, example: '"dependencies": ["zk-lib"]'\
 > \# Put sounds_list.cfg in folder my-mod/locale/en (it'll provide readable text in the game)
 >
