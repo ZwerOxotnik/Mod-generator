@@ -1,6 +1,5 @@
 #!/bin/bash
 ### Generates lua and cfg files to handle .ogg sounds for Factorio
-### Modified version of https://github.com/ZwerOxotnik/Mod-generator
 
 
 ### Find info.json
@@ -145,4 +144,4 @@ echo ""
 echo ""
 
 echo "if you found a bug or you have a problem with script etc, please, let me know"
-echo "This script created by ZwerOxotnik (source: https://github.com/ZwerOxotnik/factorio-example-mod)"
+echo "This script created by ZwerOxotnik (source: https://github.com/ZwerOxotnik/Mod-generator)"
