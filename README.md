@@ -1,13 +1,11 @@
 [![Discord](https://i.imgur.com/GYTxQdx.png)](https://discordapp.com/invite/YyJVUCa)[![Patreon](https://i.imgur.com/6n2ifle.png)](https://www.patreon.com/ZwerOxotnik) [![reddit](https://i.imgur.com/J1k7aGJ.png)](https://reddit.com/r/ZwerOxotnik)
 
-# https://github.com/ZwerOxotnik/factorio-example-mod has improved version of this script!
-
 This script generates locales and lua files to handle your sound without programming!
-Tested on Windows 10 before and this script doesn't support some symbols and doesn't like spaces.
+Tested on Windows and Linux. This script doesn't support some symbols and doesn't like spaces.
 
-Files "141258__eternitys__interface3.ogg" and "346835__yatoimtop__pageturn.ogg" for example, so you can test in this folder, probably.
+Files "141258__eternitys__interface3.ogg" and "346835__yatoimtop__pageturn.ogg" for example, so you can test in this folder.
 
-**Instruction**: copy "launch me to handle sounds.bat" file and paste it in your mod directory where you have sounds then launch "launch me to handle sounds.bat" file.
+**Instruction**: copy "launch me to handle sounds.sh" file and paste it in your mod directory where you have sounds then launch "launch me to handle sounds.sh" file.
 
 If everything works then you'll similar text at the end to this:
 
