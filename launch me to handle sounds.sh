@@ -1,5 +1,9 @@
-#!/bin/bash
+#!/usr/bin/env bash
 ### Generates lua and cfg files to handle .ogg sounds for Factorio
+
+
+bold=$(tput bold)
+normal=$(tput sgr0)
 
 
 ### Find info.json
@@ -34,14 +38,17 @@ CFG_FILE=sounds_list.cfg
 
 ### Get mod name and version from info.json
 ### https://stedolan.github.io/jq/
-if [ infojson_exists = true ] ; then
+if [ $infojson_exists = true ] ; then
 	mod_name=`cat info.json|jq -r .name`
+	if ! command -v jq &> /dev/null; then
+		echo "Please install jq https://stedolan.github.io/jq/"
+	fi
 fi
 
 
-echo "you're in $SCRIPT_DIR"
-read -r -p "Complete path to folder of sounds: $mod_name/" folder_path 
-folder_path=$mod_folder/$folder_path
+echo "you're in ${bold}$mod_folder${normal}"
+read -r -p "Complete path to folder of sounds: $mod_name/" folder_name 
+folder_path=$mod_folder/$folder_name
 read -r -p "Add sounds to programmable speakers? [Y/N] " response
 case "$response" in
     [yY][eE][sS]|[yY])
@@ -90,7 +97,11 @@ fi
 if [ $STATE -eq 2 ]; then
 	echo -e "\tname = nil --change me, if you want to add these sounds to programmable speakers" >> $SOUNDS_LIST_PATH
 fi
-echo -e "\tpath = \"__"$mod_name"__/"$folder_path"/\", -- path to this folder" >> $SOUNDS_LIST_PATH
+if [ -z "$folder_name" ]; then
+	echo -e "\tpath = \"__${mod_name}__/\", -- path to this folder" >> $SOUNDS_LIST_PATH
+else
+	echo -e "\tpath = \"__"${mod_name}"__/"${folder_name}"/\", -- path to this folder" >> $SOUNDS_LIST_PATH
+fi
 echo -e "\tsounds = {" >> $SOUNDS_LIST_PATH
 
 
@@ -108,7 +119,7 @@ if [ $sox_exists = true ] ; then
 			ext=""
 		fi
 		### It's too messy to fix
-		if ! [[ "$ext" =~ ^(|ogg|txt|lua|zip|json|cfg|md|sample|bat|sh)$ ]]; then
+		if ! [[ "$ext" =~ ^(|ogg|txt|lua|zip|json|cfg|md|sample|bat|sh|gitignore)$ ]]; then
 			sox $fullpath $dir/$base.ogg
 		fi
 	done
@@ -133,14 +144,28 @@ echo if "puan_api then puan_api.add_sounds(sounds_list) end" >> $SOUNDS_LIST_PAT
 echo "" >> $SOUNDS_LIST_PATH
 echo "return sounds_list" >> $SOUNDS_LIST_PATH
 
-echo "You're almost ready!"
-echo "# You need to write 'require(\"__$mod_name__/$folder_path/sounds_list\")' in your $mod_name/control.lua"
-echo "# Add string \"zk-lib\" in dependencies of $mod_name/info.json, example: '\"dependencies\": [\"zk-lib\"]'"
+echo ""
+echo "You're almost ready!${bold}"
+
+if [ ! -f "$SCRIPT_DIR/control.lua" ] && [ $infojson_exists = true ]; then
+	if [ -z "$folder_name" ]; then
+		echo "require(\"__${mod_name}__/sounds_list\")" >> "$SCRIPT_DIR/control.lua"
+	else
+		echo "require(\"__${mod_name}__/${folder_name}/sounds_list\")" >> "$SCRIPT_DIR/control.lua"
+	fi
+else
+	if [ $infojson_exists = true ]; then
+		echo "# You need to write 'require(\"__${mod_name}__/${folder_name}/sounds_list\")' in your ${mod_name}/control.lua"
+	else
+		echo "# You need to write 'require(\"__mod-name__/${folder_name}/sounds_list\")' in your ${mod_name}/control.lua"
+	fi
+fi
+echo "# Add string \"zk-lib\" in dependencies of ${mod_name}/info.json, example: '\"dependencies\": [\"zk-lib\"]'"
 if [ $STATE -eq 1 ] && [ $infojson_exists = false ]; then
-	echo "# Put $CFG_FILE in folder "$mod_name"/locale/en (it'll provide readable text in the game)"
+	echo "# Put ${CFG_FILE} in folder /locale/en (it'll provide readable text in the game)"
 fi
 
-echo ""
+echo "${normal}"
 echo ""
 
 echo "if you found a bug or you have a problem with script etc, please, let me know"
