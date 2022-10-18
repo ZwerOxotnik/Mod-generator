@@ -11,11 +11,11 @@ SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 cd $SCRIPT_DIR
 infojson_exists=false
 script_file=`basename "$0"`
-if [[ -f "$SCRIPT_DIR/info.json" ]]; then
+if [[ -s "$SCRIPT_DIR/info.json" ]]; then
     infojson_exists=true
 else
 	cd ..
-	if [[ -f "$PWD/info.json" ]]; then
+	if [[ -s "$PWD/info.json" ]]; then
 		infojson_exists=true
 	else
 		cd $SCRIPT_DIR
