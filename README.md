@@ -20,5 +20,3 @@ If everything works then you'll similar text at the end to this:
 >
 >
 > Press any key to continue ...
-
-**If my mod get attention and I'll get at least ~5$, then I'll create and publish improved version which can create mod fully and even simpler.**
